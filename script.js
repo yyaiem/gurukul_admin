@@ -1,4 +1,4 @@
-let url1 = 'https://script.google.com/macros/s/AKfycby6mJLaW7ce4FkXnGQZrcp2pOg83-d475e1DUNMBK98P6BTWyNsw8rMD-Zprt7m9DX0sA/exec'
+let url1 = 'https://script.google.com/macros/s/AKfycbzIAJx6iOxiCPOWaYgIFDFy04kvHbFuu6oCohT9a7vvLHhJCygHDYXc5HQTFYFAEko_Uw/exec'
 
 let url2 = 'https://script.google.com/macros/s/AKfycbwvTHmXePjEt_5oMxnASHx2HFwnjW3hWpM9qv681CBgLjCSSUdu_3siki69aWK1eXd2/exec'
 
@@ -17,7 +17,7 @@ function user_name() {
 
     let inp = document.getElementById("usr").value.toLowerCase();
     console.log(inp);
-    const user_names = [['mdk_debraj', "Debraj Modak"], ['pinaka', "Panaka"]];
+    const user_names = [['mdk_debraj', "Debraj Modak"], ['pinaka', "Pinaka"]];
 
     if (inp === '') {
         result.textContent = 'Please enter a value.';
@@ -80,9 +80,9 @@ function AddContent() {
 
     document.body.style.backgroundColor = "#1C1427";
 
-    const input = DateTime()[0] + DateTime()[1];
-    const cleanedInput = input.replace(/[,.: ]/g, '').slice(0, -2);
-    document.getElementById("content_id").value = cleanedInput;
+    // const inputb = genarateContentID()[0]+genarateContentID()[1];
+    const input = ContentID();
+    document.getElementById("content_id").value = input;
     document.getElementById("admin_user_name").value = localStorage.getItem('ProfileName');
 
 }
@@ -92,7 +92,7 @@ function RemoveContent() {
     document.getElementById("options").style.display = "none";
     document.getElementById("add_content").style.display = 'none';
     document.getElementById("remove_conent").style.display = 'flex';
-    document.body.style.backgroundColor = "#40514E";
+    document.body.style.backgroundColor = "#5e0933";
 
 }
 
@@ -143,6 +143,38 @@ function DateTime() {
     return [[`${formattedDate}`], [`${formattedTime}`]];
 }
 
+function ContentID() {
+    // Get current date and time
+    const options = {
+        timeZone: 'Asia/Kolkata',
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false // Use 24-hour format
+    };
+
+    // Format the date and time
+    const formatter = new Intl.DateTimeFormat('en-GB', options); // Use 'en-GB' for 24-hour format
+    const formattedParts = formatter.formatToParts(new Date());
+
+    // Extract the parts
+    const day = formattedParts.find(part => part.type === 'day').value.padStart(2, '0');
+    const month = formattedParts.find(part => part.type === 'month').value.padStart(2, '0');
+    const year = formattedParts.find(part => part.type === 'year').value.slice(-2); // Last two digits of the year
+    const hour = formattedParts.find(part => part.type === 'hour').value.padStart(2, '0');
+    const minute = formattedParts.find(part => part.type === 'minute').value.padStart(2, '0');
+    const second = formattedParts.find(part => part.type === 'second').value.padStart(2, '0');
+
+    // Format the output as "ddmmyyMMHHSS"
+    const formattedDateTime = `${day}${month}${year}${hour}${minute}${second}`;
+
+    return formattedDateTime;
+}
+
+
 function getGreeting(currentTime) {
     // Split the input into time and period (AM/PM)
     const [time, period] = currentTime.trim().split(' ');
@@ -168,7 +200,7 @@ function getGreeting(currentTime) {
     }
 }
 
-function server(form_id, url,a,b,c) {
+function server(form_id, url, a, b, c) {
     let form = document.querySelector(`#${form_id}`)
     form.addEventListener("submit", (e) => {
         e.target.status_box.innerHTML = a;
@@ -182,7 +214,7 @@ function server(form_id, url,a,b,c) {
                 setTimeout(() => {
                     e.target.status_box.innerHTML = c;
                     optionsPage();
-                }, 4000)
+                }, 1000)
                 // alert
                 console.log(finalRes)
                 // alert(finalRes)
@@ -200,5 +232,5 @@ function server(form_id, url,a,b,c) {
 
 }
 
-server('content_add_form', url1,"Submitting..","Submitted","Submit");
-server('content_delete_form', url2,'Deleting...',"Deleted!","Delete");
+server('content_add_form', url1, "Submitting..", "Submitted", "Submit");
+server('content_delete_form', url2, 'Deleting...', "Deleted!", "Delete");
