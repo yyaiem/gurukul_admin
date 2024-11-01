@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    height: 95%;
+}
+
+body {
+    background-color: #211951;
+    padding: 10px;
+    height: 100%;
+}
+
+.all_page {
+    height: 100%;
+    width: 100%;
+}
+
+/* header  */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff1e;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.nav_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    height: 30px;
+    margin-right: 4px;
+}
+
+.nav_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px;
+    font-family: 'Samarkan',"Chewy", system-ui;
+    /* font-family:  sans-serif; */
+                                                
+    color: #F0F3FF;
+    background-color: #ffffff00;
+    cursor: pointer;
+}
+
+/* main   */
+
+main {
+    height: 80%;
+    width: 100%;
+}
+
+.container_login,
+.container_options,
+.container_remove_conent,
+.container_add_content {
+    display: block;
+    width: 80%;
+}
+
+.login,
+.options,
+.add_content,
+.remove_content {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #ffffff1e;
+    border-radius: 20px;
+    margin: 10px;
+    overflow: hidden;
+    /* flex-wrap: wrap; */
+}
+
+.qst_grp {
+    margin: 10px 0px;
+}
+
+/* login page  */
+.heaading_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "DynaPuff", system-ui;
+    font-size: 7vw;
+    color: #F0F3FF;
+    margin-bottom: 10px;
+}
+
+label {
+    color: #836FFF;
+}
+
+#login_form {
+    font-family: "Permanent Marker";
+}
+
+input {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #836FFF;
+    border-radius: 10px;
+    color: #000000;
+    outline: none;
+    width: 90%;
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+::placeholder {
+    color: #040309;
+    font-size: 12px;
+    font-family: "Permanent Marker";
+}
+
+.login_inpt {
+
+
+    font-family: "Permanent Marker";
+}
+
+/* options page  */
+.profile_name_container {
+    display: block;
+}
+
+.user_name {
+    font-family: "Chewy", system-ui;
+    color: #FFC700;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.options_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option_text {
+    display: flex;
+    justify-content: center;
+    background-color: #4ccd99a0;
+    margin: 10px 0px;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-family: "Chewy", system-ui;
+    color: #FFF455;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* add content     */
+
+#content_add_form,
+#content_delete_form {
+    font-family: "Schoolbell", cursive;
+    font-weight: 900;
+}
+
+.forn_input {
+
+    font-family: "Schoolbell", cursive;
+}
+
+.urlselect {
+    outline: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #836FFF;
+    border-radius: 10px;
+    color: #483e78;
+    outline: none;
+    width: 80%;
+    margin-top: 4px;
+    font-family: "Schoolbell", cursive;
+}
+
+.form_btn {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn {
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #836FFF;
+    color: #4b4375;
+    font-size: 12px;
+    font-family: "Schoolbell", cursive;
+    font-weight: bold;
+}
+
+
+
+
+/* delete content    */
+
+
+
+
+/* foooter    */
+.footer_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff1e;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+
+.card,
+.logout_btn {
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background-color: #ffffff12;
+    border-radius: 18px;
+    margin: 4px 20px 4px 20px;
+    color: #F0F3FF;
+}
+
+.card {
+    display: flex;
+    font-family: "Rubik Glitch", system-ui;
+    font-size: 20px;
+}
+
+
+.logout_btn {
+    display: none;
+    font-family: "Chewy", system-ui;
+}
+
+.profile-pic {
+    height: 50px;
+    border-radius: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.dev_name {
+    margin-right: 10px;
+    margin-left: 10px;
+    text-shadow:
+        0 0 5px #A3D8FF,
+        0 0 10px #A3D8FF,
+        0 0 20px #A3D8FF,
+        0 0 40px #A3D8FF,
+        0 0 80px #A3D8FF,
+        0 0 120px #A3D8FF;
+}
+
+.logout_text {
+    margin: 10px;
+}
